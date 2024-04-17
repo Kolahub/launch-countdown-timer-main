@@ -84,7 +84,6 @@ body {
     border-radius: 6px 6px 0 0;
 }
 .bottom {
-    position: relative;
     background-color: hsl(236, 21%, 30%);
     height: 46%;
     width: 100%;
