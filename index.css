@@ -78,10 +78,12 @@ body {
 }
 
 .top {
+    position: relative;
     background-color: var(--dark-desaturated-blue); 
     height: 48%;
     width: 100%;
     border-radius: 6px 6px 0 0;
+    z-index: 1;
 }
 .bottom {
     background-color: hsl(236, 21%, 30%);
@@ -100,7 +102,7 @@ body {
     border-radius: 50%;
     background-color: var(--veryy-dark-blue);
     overflow: hidden;
-    z-index: 3000;
+    z-index: 2;
 }
 
 .curve2{
@@ -113,7 +115,7 @@ body {
     border-radius: 50%;
     background-color: var(--veryy-dark-blue);
     overflow: hidden;
-    z-index: 3000;
+    z-index: 2;
 }
 .line {
     width: 100%;
@@ -132,10 +134,26 @@ body {
     top: 36%;
     left: 50%;
     transform: translate(-50%, -35%);
-    z-index: 3000;
     color: var(--soft-red);
+    z-index: 5;
 }
-
+.timer-text {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translate(-50%, -60px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+    max-width: 100rem;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    text-align: center;
+}
 .anime {
     animation: flip 1s ease-out 0s infinite;
 }
@@ -155,7 +173,7 @@ body {
     html {
        font-size: 56.5%;
     }
-    .timer {
+    .timer, .timer-text {
         max-width: 95rem;
         gap: 3.5rem;
     }
@@ -171,7 +189,7 @@ body {
         font-size: 50%;
     }
 
-    .timer {
+    .timer{
         max-width: 80rem;
         gap: 2.5rem;
     }
@@ -193,6 +211,10 @@ body {
         max-width: 100%;
         width: calc(100% - 6rem);
         gap: 2rem;
+    }
+
+    .timer-text { 
+        font-size: 2rem;
     }
 
     .time {
@@ -229,10 +251,14 @@ body {
 }
 
 @media only screen and (max-width: 25em) {  
-    .timer {
+    .timer{
         max-width: 100%;
         width: calc(100% - 4rem);
         gap: 1.5rem;
+    }
+
+    .timer-text { 
+        font-size: 1.8rem;
     }
 
     .time {
