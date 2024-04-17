@@ -57,58 +57,90 @@ body {
     perspective: 300rem;
     transform-style: preserve-3d;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 5rem;
-    max-width: 110rem;
+    max-width: 100rem;
     margin: 0 auto;
+    width: 100%;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -40%);
-
 }
 .time {
     position: relative;
     display: flex;
     flex-direction: column;
     background-color: var(--veryy-dark-blue);
+    width: 100%;
     height: 18rem;
     border-radius: 6px;
-
-
 }
+
 .top {
     background-color: var(--dark-desaturated-blue); 
-    height: 46%;
+    height: 48%;
     width: 100%;
     border-radius: 6px 6px 0 0;
 }
 .bottom {
     position: relative;
     background-color: hsl(236, 21%, 30%);
-    height: 48%;
+    height: 46%;
     width: 100%;
     border-radius:0 0 6px 6px;
-    z-index: 2000;
+}
+
+.curve{
+    position: absolute;
+    left: 95%;
+    top: 42%;
+    transform: translateY(-100%, -42%);
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background-color: var(--veryy-dark-blue);
+    overflow: hidden;
+    z-index: 3000;
+}
+
+.curve2{
+    position: absolute;
+    left: -4%;
+    top: 42%;
+    transform: translateY(4%, -42%);
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background-color: var(--veryy-dark-blue);
+    overflow: hidden;
+    z-index: 3000;
+}
+.line {
+    width: 100%;
+    height: 1.3px;
+    background-color: rgb(19, 19, 19);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .3);
+    position: absolute;
+    top: 48%;
+    z-index: 4000;
 }
 
 .num {
     font-size: 10rem;
     font-weight: 600;
     position: absolute;
-    top: 40%;
+    top: 36%;
     left: 50%;
-    transform: translate(-50%, -40%);
-    z-index: 2000;
+    transform: translate(-50%, -35%);
+    z-index: 3000;
     color: var(--soft-red);
 }
 
 .anime {
     animation: flip 1s ease-out 0s infinite;
 }
-.animeOnce {
-    animation: flip 1s ease-out 0s infinite;
-}
+
 @keyframes flip {
     0% {
         transform: rotateX(90deg);
@@ -117,6 +149,99 @@ body {
     100% {
         transform: rotateX(0deg);
 
+    }
+}
+
+@media only screen and (max-width: 62.5em) {
+    html {
+       font-size: 56.5%;
+    }
+    .timer {
+        max-width: 95rem;
+        gap: 3.5rem;
+    }
+
+    .time {
+        width: 100%;
+        height: 16rem;
+    }
+}
+
+@media only screen and (max-width: 50em) { 
+    html {
+        font-size: 50%;
+    }
+
+    .timer {
+        max-width: 80rem;
+        gap: 2.5rem;
+    }
+
+    .time {
+        width: 100%;
+        height: 14rem;
+    }
+}
+
+@media only screen and (max-width: 36.875em) { 
+    .heading-text {
+        font-size: 1.3rem;
+        width: calc(100% - 4rem);
+        margin: 0 2rem;
+    }
+
+    .timer {
+        max-width: 100%;
+        width: calc(100% - 6rem);
+        gap: 2rem;
+    }
+
+    .time {
+        width: 100%;
+        height: 10rem;
+    }
+    .num {
+        font-size: 6rem;
+        top: 52%;
+        left: 50%;
+        transform: translate(-50%, -52%);
+    }
+
+    .curve {
+    width: 1.6rem;
+    height: 1.6rem;
+    left: 91%;
+    top: 42%;
+    transform: translateY(-100%, -42%);
+    }
+
+    .curve2 {
+    width: 1.6rem;
+    height: 1.6rem;
+    left: -8%;
+    top: 42%;
+    transform: translateY(3%, -42%);
+    }
+
+    .line {
+        height: 1px;
+        top: 50%;
+    }
+}
+
+@media only screen and (max-width: 25em) {  
+    .timer {
+        max-width: 100%;
+        width: calc(100% - 4rem);
+        gap: 1.5rem;
+    }
+
+    .time {
+        width: 100%;
+        height: 8rem;
+    }
+    .num {
+        font-size: 4.5rem;
     }
 }
 
