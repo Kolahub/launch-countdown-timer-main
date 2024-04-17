@@ -1,0 +1,122 @@
+:root {
+/* Primary */
+--grayish-blue: hsl(237, 18%, 59%);
+--soft-red: hsl(345, 95%, 68%);
+
+/* Neutral */
+--white: hsl(0, 0%, 100%);
+--dark-desaturated-blue: hsl(236, 21%, 26%);
+--very-dark-blue: hsl(235, 16%, 14%);
+--veryy-dark-blue: hsl(234, 17%, 12%);
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    box-sizing: inherit;
+    position: relative;
+}
+
+.home {
+    height: 100vh;
+    background-image: url(./images/bg-stars.svg);
+    background-color: var(--very-dark-blue);
+}
+
+.rootImg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background-image:  url(./images/pattern-hills.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.heading-text {
+    font-size: 1.5rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    text-align: center;
+    transform: translateY(10rem);
+}
+
+.timer {
+    perspective: 300rem;
+    transform-style: preserve-3d;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 5rem;
+    max-width: 110rem;
+    margin: 0 auto;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+
+}
+.time {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--veryy-dark-blue);
+    height: 18rem;
+    border-radius: 6px;
+
+
+}
+.top {
+    background-color: var(--dark-desaturated-blue); 
+    height: 46%;
+    width: 100%;
+    border-radius: 6px 6px 0 0;
+}
+.bottom {
+    position: relative;
+    background-color: hsl(236, 21%, 30%);
+    height: 48%;
+    width: 100%;
+    border-radius:0 0 6px 6px;
+    z-index: 2000;
+}
+
+.num {
+    font-size: 10rem;
+    font-weight: 600;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    z-index: 2000;
+    color: var(--soft-red);
+}
+
+.anime {
+    animation: flip 1s ease-out 0s infinite;
+}
+.animeOnce {
+    animation: flip 1s ease-out 0s infinite;
+}
+@keyframes flip {
+    0% {
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+
+    }
+}
+
